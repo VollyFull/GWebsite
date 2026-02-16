@@ -1,0 +1,79 @@
+
+<!-- 
+    This file displays the documentation for Guardio. It uses a custom "Tree Layout" 
+    structure to visualize the relationship between the main Dashboard command and its 
+    sub-features (AI, Anti-Raid, Anti-Spam). The .tree-section holds the diagram, 
+    .parent-card is the top node, and CSS classes like .branch-lines draw the neon 
+    connectors between them automatically based on the styles in style.css.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guardio Documentation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Guardio Documentation</h1>
+    <p class="typewriter">Welcome to the page that helps you understand Guardio</p>
+
+    <div class="nav-container">
+        <a href="#features-list">
+            <button>View Features</button>
+        </a>
+
+        <a href="index.html">
+            <button>Return Home</button>
+        </a>
+    </div>
+
+    <hr class="neon-line">
+	
+    <div id="features-list">
+        <h2>Features List</h2>
+        
+        <div class="tree-section">
+            
+            <div class="feature-card parent-card">
+                <h3 class="command">/dashboard</h3>
+                <p>One dashboard, total control.</p>
+                <p>Configure all modules below from one central internal panel within Discord.</p>
+            </div>
+
+            <div class="connector-vertical"></div>
+            <div class="branch-lines">
+                <div class="line-drop left"></div>
+                <div class="line-drop center"></div>
+                <div class="line-drop right"></div>
+            </div>
+
+            <div class="children-row">
+                
+                <div class="feature-card">
+                    <h3 class="command">AI Moderation</h3>
+                    <p>Powered by Machine Learning.</p>
+                    <p>Detects hate speech, toxicity, and NSFW images automatically before they are reported.</p>
+                </div>
+
+                <div class="feature-card">
+                    <h3 class="command">Anti-Raid</h3>
+                    <p>Protect your server.</p>
+                    <p>Automatically locks channels and kicks mass-joiners during a suspected raid attack.</p>
+                </div>
+
+                <div class="feature-card">
+                    <h3 class="command">Anti-Spam</h3>
+                    <p>Keep chat clean.</p>
+                    <p>Detects copy-pasta, mass mentions, and fast message sending. Mutes offenders instantly.</p>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

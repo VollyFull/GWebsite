@@ -1,0 +1,230 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: radial-gradient(circle at center, #1a2980 0%, #000000 100%); /* Deep Blue to Black */
+    color: white;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden; /* Prevents scrollbar if glow is too wide */
+}
+
+/* --- TYPOGRAPHY --- */
+
+h1 {
+    padding-top: 10vh;
+    font-size: 3rem;
+    text-shadow: 0 0 15px #4169E1, 0 0 30px #4169E1, 0 0 60px #4169E1;
+    margin-bottom: 0.5em;
+}
+
+.landing-title {
+    padding-top: 40vh;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    text-shadow: 0 0 10px #fff, 0 0 20px #4169E1;
+    font-weight: bold;
+}
+
+h3 {
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+}
+
+p {
+    font-size: 16px;
+    color: #e0e0e0;
+    line-height: 1.6;
+    margin-bottom: 1em;
+}
+
+
+
+.nav-container {
+    margin: 30px 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+button {
+    background: rgba(65, 105, 225, 0.2); /* Slight background fill */
+    border: 1px solid #4169E1;
+    color: white;
+    padding: 12px 30px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(65, 105, 225, 0.2);
+}
+
+button:hover {
+    background-color: #4169E1;
+    box-shadow: 0 0 15px #4169E1, 0 0 30px #4169E1;
+    transform: translateY(-2px);
+    border-color: #fff;
+}
+
+
+.neon-line {
+    width: 60%;
+    margin: 60px auto;
+    border: 0;
+    height: 3px;
+    background-color: #00ffff;
+    border-radius: 5px;
+    box-shadow: 
+        0 0 5px  #00ffff,
+        0 0 15px #00ffff,
+        0 0 30px #4169E1;
+}
+
+
+.features-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto 50px auto;
+    padding: 0 20px;
+}
+
+.feature-card {
+    /* Blue Gradient Background */
+    background: linear-gradient(180deg, rgba(40, 60, 134, 0.6) 0%, rgba(10, 20, 40, 0.8) 100%);
+    border: 1px solid rgba(65, 105, 225, 0.5);
+    border-radius: 12px;
+    padding: 30px 20px;
+    width: 300px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    position: relative;
+    z-index: 2; /* Ensures cards sit ON TOP of lines */
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    border-color: #00ffff;
+    box-shadow: 0 15px 40px rgba(65, 105, 225, 0.3);
+}
+
+.command {
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    color: #00ffff;
+    text-shadow: 0 0 10px #00ffff, 0 0 20px #4169E1;
+    margin-top: 0;
+}
+
+
+.typewriter {
+    display: inline-block;
+    overflow: hidden;
+    border-right: 3px solid #00ffff;
+    white-space: nowrap;
+    margin: 0 auto;
+    letter-spacing: 0.10em;
+    animation: 
+        typing 4.5s steps(40, end),
+        blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: #00ffff; }
+}
+
+
+.tree-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 80px;
+    position: relative;
+}
+
+.parent-card {
+    width: 400px; /* Slightly wider as per image */
+    border-color: #4169E1;
+    box-shadow: 0 0 20px rgba(65, 105, 225, 0.4);
+    background: linear-gradient(180deg, rgba(65, 105, 225, 0.3) 0%, rgba(10, 20, 40, 0.8) 100%);
+}
+
+.connector-vertical {
+    width: 4px; /* Thicker line */
+    height: 40px; /* Fixed height creates space so lines don't overlap box */
+    background-color: #00ffff;
+    box-shadow: 0 0 15px #00ffff;
+    margin: 0 auto;
+    z-index: 1;
+}
+
+.branch-lines {
+    position: relative;
+    /* Calculated Width: 3 cards (300px) + 2 gaps (20px) = 940px */
+    width: 940px; 
+    height: 30px; /* Height for the drop lines */
+    margin-bottom: -5px; /* Slight overlap to connect to children */
+}
+
+/*The Horizontal Line itself*/
+.branch-lines::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    /* Start at center of first card (150px) and end at center of last card */
+    left: 150px; 
+    right: 150px;
+    height: 4px;
+    background-color: #00ffff;
+    box-shadow: 0 0 15px #00ffff;
+}
+
+/* The Vertical Drop Lines */
+.branch-lines .line-drop {
+    position: absolute;
+    top: 0;
+    width: 4px;
+    height: 30px;
+    background-color: #00ffff;
+    box-shadow: 0 0 15px #00ffff;
+}
+
+/* Positioning drops exactly at card centers */
+.line-drop.left { left: 150px; } /* Center of 300px card */
+.line-drop.center { left: 50%; transform: translateX(-50%); height: 35px; top: -5px; } /* Connects to main vertical */
+.line-drop.right { right: 150px; }
+
+/* 3. The Row of Children */
+.children-row {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Must match calculation above */
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 2; /* Brings cards above lines */
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 980px) {
+    .branch-lines, .connector-vertical { display: none; }
+    .children-row { flex-direction: column; align-items: center; margin-top: 30px; }
+    .parent-card { width: 300px; }
+    .branch-lines { width: 100%; }
+}
