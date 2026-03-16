@@ -128,15 +128,31 @@ button:hover {
 }
 
 
-.typewriter {
+.typewriter-wrapper {
     display: inline-block;
+    position: relative;
+    margin: 0 auto;
+}
+
+.typewriter-hidden {
+    visibility: hidden;
+    white-space: nowrap;
+    letter-spacing: 0.10em;
+    margin: 0;
+    padding-right: 3px;
+}
+
+.typewriter {
+    position: absolute;
+    top: 0;
+    left: 0;
     overflow: hidden;
     border-right: 3px solid #00ffff;
     white-space: nowrap;
-    margin: 0 auto;
+    margin: 0;
     letter-spacing: 0.10em;
     animation: 
-        typing 4.5s steps(40, end),
+        typing 2.5s steps(40, end) forwards,
         blink-caret 0.75s step-end infinite;
 }
 
